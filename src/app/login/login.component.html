@@ -1,0 +1,38 @@
+<div class="ui container wrapper">
+	<div class="ui two column centered grid center-container">
+		<div class="ui column centered grid">
+			<div class="column login-wrapper">
+				<h2 class="ui header centered">Login</h2>
+				<form class="ui form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+				  <div class="field">
+				    <label>Username</label>
+				    <input type="text" formControlName="username" id="username" autocomplete="off">
+					<div class="error" *ngIf="loginForm.controls['username'].hasError('required') && loginForm.controls['username'].touched">Username is required</div>
+				  </div>
+				  <div class="field">
+				    <label>Password</label>
+				    <input type="password" formControlName="password" id="pwd" autocomplete="off">
+					<div class="error" *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched">Password is required</div>
+				  </div>
+				  <div class="field">
+				    <div class="ui left floated checkbox">
+				      <input type="checkbox" tabindex="0" class="hidden">
+				      <label>Remember me</label>
+				    </div>
+				    <div class="ui right floated checkbox forgot-password">
+				      <a href="">Forgot Password</a>
+				    </div>
+				  </div>
+				  <button class="ui left floated primary button" type="submit" [disabled]="loginForm.invalid">Login</button>
+				  <button class="ui right floated button right" type="submit">Sign Up</button>
+				  <div *ngIf="invalidLogin" class="error">
+				    <div>Invalid credentials.</div>
+				  </div>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

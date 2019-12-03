@@ -1,0 +1,13 @@
+.custom-title{
+    color: #373a3c;
+    font-size: 45px !important;
+    padding-left:30px;
+}
+.custom-add-wrapper{
+    border: 0.5px rgba(139, 139, 139, 0.445) solid;
+    width: 70% !important;
+    transform: translate(-10%,20%) !important;
+}
+.custom-btn-width{
+    width: 25%;
+}

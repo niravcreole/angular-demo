@@ -1,0 +1,91 @@
+<div> 
+<div class="main-header"> 
+  <h1 class="custom-title">Edit User</h1>
+</div>
+</div>
+
+<div class="ui container">
+  <div *ngIf="messageStatus" class="ui positive message">
+    <i class="close icon" (click)="handleClose()"></i>
+    <div class="header">
+      User has been updated. Redirecting...
+    </div>
+  </div>
+  <div class="ui two column centered grid custom-width">
+    <div class="ui column centered grid custom-add-wrapper">
+      <div class="column">
+        <form class="ui form" *ngIf="editUser" [formGroup]="editUser" (ngSubmit)="onSubmit()">
+          <div class="hidden">
+            <input type="hidden" formControlName="id" placeholder="id" name="id" class="form-control" id="id">
+          </div>
+          <div class="field">
+            <label>FirstName</label>
+            <input
+              type="text"
+              formControlName="first_name"
+              id="first_name"
+              autocomplete="off"
+            />
+            <div
+              class="error"
+              *ngIf="
+                editUser.controls['first_name'].hasError('required') &&
+                editUser.controls['first_name'].touched
+              "
+            >
+              Firstname is required
+            </div>
+          </div>
+          <div class="field">
+            <label>LastName</label>
+            <input
+              type="text"
+              formControlName="last_name"
+              id="last_name"
+              autocomplete="off"
+            />
+            <div
+              class="error"
+              *ngIf="
+                editUser.controls['last_name'].hasError('required') &&
+                editUser.controls['last_name'].touched
+              "
+            >
+              Lastname is required
+            </div>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input
+              type="text"
+              formControlName="email"
+              id="email"
+              autocomplete="off"
+            />
+            <div
+              class="error"
+              *ngIf="
+                editUser.controls['email'].hasError('required') &&
+                editUser.controls['email'].touched
+              "
+            >
+              Email is required
+            </div>
+          </div>
+
+          <button
+            class="ui right floated primary button custom-btn-width"
+            type="submit"
+            [disabled]="editUser.invalid"
+          >
+            Save
+          </button>
+
+          <div *ngIf="invalidUpdateUser" class="error">
+            <div>Invalid Data.</div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

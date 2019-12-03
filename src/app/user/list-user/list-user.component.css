@@ -1,0 +1,48 @@
+.title{
+	padding: 2px 0px 5px 60px;
+}
+.list-wrapper{
+	padding: 10px 90px;
+}
+.icon-wrapper i{
+	cursor: pointer;
+	font-size: 20px;
+	margin: 0px 5px; 
+}
+.detail-user{
+	font-size: 23px!important;
+}
+.pagination{
+	margin-right: 88px!important;
+    
+}
+.active{
+	background-color: #417d6e!important;
+}
+.custom-title{
+	float: left;
+    color: #373a3c;
+    font-size: 45px !important;
+    padding-left:30px;
+}
+.main-header{
+	float: left;
+    width: 100%;
+    margin-top: 30px !important; 
+}
+.create-user{
+	float: right;
+    margin: 17px 80px 0px 0px;
+}
+.ui.primary.button, .ui.primary.buttons .button{
+	border: 1px solid #2185d0;
+    color: #2185d0;
+    background-color: white;	
+}
+.ui.grid>* {
+	padding :0px !important;
+}
+.description {
+	color : #686868 !important;
+}
+

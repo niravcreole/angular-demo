@@ -1,0 +1,86 @@
+<div>  
+  <h1 class="custom-title">Create User</h1>
+</div>
+
+<div class="ui container">
+  <div *ngIf="messageStatus" class="ui positive message">
+    <i class="close icon" (click)="handleClose()"></i>
+    <div class="header">
+      User has been created. Redirecting...
+    </div>
+  </div>
+  <div class="ui two column centered grid custom-width">
+    <div class="ui column centered grid custom-add-wrapper">
+      <div class="column">
+        <form class="ui form" *ngIf="addUser" [formGroup]="addUser" (ngSubmit)="onSubmit()">
+          <div class="field">
+            <label>FirstName</label>
+            <input
+              type="text"
+              formControlName="firstname"
+              id="firstname"
+              autocomplete="off"
+            />
+            <div
+              class="error"
+              *ngIf="
+                addUser.controls['firstname'].hasError('required') &&
+                addUser.controls['firstname'].touched
+              "
+            >
+              Firstname is required
+            </div>
+          </div>
+          <div class="field">
+            <label>LastName</label>
+            <input
+              type="text"
+              formControlName="lastname"
+              id="lastname"
+              autocomplete="off"
+            />
+            <div
+              class="error"
+              *ngIf="
+                addUser.controls['lastname'].hasError('required') &&
+                addUser.controls['lastname'].touched
+              "
+            >
+              Lastname is required
+            </div>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input
+              type="text"
+              formControlName="username"
+              id="username"
+              autocomplete="off"
+            />
+            <div
+              class="error"
+              *ngIf="
+                addUser.controls['username'].hasError('required') &&
+                addUser.controls['username'].touched
+              "
+            >
+              Email is required
+            </div>
+          </div>
+
+          <button
+            class="ui right floated primary button custom-btn-width"
+            type="submit"
+            [disabled]="addUser.invalid"
+          >
+            Create
+          </button>
+
+          <div *ngIf="invalidAddUser" class="error">
+            <div>Invalid Data.</div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

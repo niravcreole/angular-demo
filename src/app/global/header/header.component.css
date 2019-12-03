@@ -1,0 +1,11 @@
+.nav-wrapper{
+    background-color: #373a3c;
+    border-radius: 0;
+    
+}
+.nav-wrapper .logo {
+    font-size: 20px;
+ }
+ .active{
+    background-color: #417d6e!important;
+}

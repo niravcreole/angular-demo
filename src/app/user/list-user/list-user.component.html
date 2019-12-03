@@ -1,0 +1,32 @@
+<div>
+  <div class="main-header">
+    <h1 class="custom-title">Users</h1>
+    <a class="ui primary button create-user" [routerLink]="['create']">Create User</a>
+  </div>
+</div>
+<div class="ui four cards list-wrapper">
+  <div class="card" *ngFor="let user of users">
+    <div class="content">
+      <img class="left floated tiny circular ui image" src="{{user.avatar}}">
+      <div>
+        <div class="header">
+          {{user.first_name}} {{user.last_name}}
+        </div>
+        <div class="meta">
+          United States
+        </div>
+        <div class="meta">
+          <i class="envelope icon"></i> {{user.email}}
+        </div>
+        <div class="description">
+          Mobile: 9874563210
+        </div>
+      </div>
+    </div>
+    <div class="ui two column centered grid extra content icon-wrapper">      
+      <a [routerLink]="['edit',user.id]"><i class="edit outline icon"></i></a>
+      <a [routerLink]="['details',user.id]"><i class="large address card outline icon detail-user"></i></a>
+      <i class="large trash alternate outline icon" (click)="deleteUser(user)"></i>
+    </div>
+  </div>
+</div>
